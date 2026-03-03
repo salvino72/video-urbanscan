@@ -2,6 +2,8 @@
 ================================================================================
 URBAN SCAN AI - NEXT GEN (YOLO 2026 VISION)
 ================================================================================
+Original Code Developer: Salvino Fidacaro (https://fidacaro.com)
+--------------------------------------------------------------------------------
 This script performs advanced video analysis to detect structural anomalies, 
 waste, vegetation, and public assets in an urban park or garden environment.
 
@@ -43,6 +45,7 @@ def analyze_video(input_path, output_path, device="0"):
 
     print("-" * 50)
     print(f"URBAN SCAN AI - NEXT GEN (YOLO 2026 VISION)")
+    print(f"Developer: Salvino Fidacaro (fidacaro.com)")
     print(f"Visual Mode: INSTANCE SEGMENTATION OVERLAY")
     print("-" * 50)
     
@@ -262,7 +265,8 @@ def analyze_video(input_path, output_path, device="0"):
 
             # MAIN TITLE (Large and impactful)
             cv2.putText(frame, "URBAN SCAN AI", (25, 40), cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 255, 255), 2)
-            cv2.putText(frame, "AI ENGINE: YOLO-WORLD 2026 VISION", (30, 75), 1, 0.9, (0, 200, 200), 1)
+            cv2.putText(frame, "DEVELOPER: SALVINO FIDACARO", (30, 70), 1, 0.9, (255, 255, 255), 1)
+            cv2.putText(frame, "AI ENGINE: YOLO-WORLD 2026 VISION", (30, 95), 1, 0.8, (0, 200, 200), 1)
             
             # MULTI-HARDWARE SUPPORT (CUDA / ARC / CPU)
             if str(device).lower() == "cpu":
@@ -275,8 +279,8 @@ def analyze_video(input_path, output_path, device="0"):
                 hw_text = "HW ACCEL: NVIDIA CUDA (TENSOR CORES)"
                 hw_color = (0, 255, 0) # Nvidia Green
 
-            cv2.putText(frame, hw_text, (30, 105), 1, 0.9, hw_color, 1)
-            cv2.line(frame, (25, 120), (hud_width - 25, 120), (0, 255, 255), 1)
+            cv2.putText(frame, hw_text, (30, 125), 1, 0.9, hw_color, 1)
+            cv2.line(frame, (25, 140), (hud_width - 25, 140), (0, 255, 255), 1)
 
             # REAL VIDEO AND AI METRICS
             video_time_current = frame_count / fps_in if fps_in > 0 else 0
@@ -285,19 +289,19 @@ def analyze_video(input_path, output_path, device="0"):
             
             avg_conf = sum(current_frame_confs) / len(current_frame_confs) if current_frame_confs else 0.0
             
-            cv2.putText(frame, f"FORMAT: {width}x{height} | {fps_in:.0f} FPS", (30, 145), 1, 0.8, (255, 255, 255), 1)
-            cv2.putText(frame, time_str, (30, 170), 1, 0.8, (255, 255, 255), 1)
+            cv2.putText(frame, f"FORMAT: {width}x{height} | {fps_in:.0f} FPS", (30, 165), 1, 0.8, (255, 255, 255), 1)
+            cv2.putText(frame, time_str, (30, 190), 1, 0.8, (255, 255, 255), 1)
             
             conf_color = (0, 255, 0) if avg_conf > 0.5 else (0, 200, 255) if avg_conf > 0 else (100, 100, 100)
-            cv2.putText(frame, f"AI CONFIDENCE: {avg_conf*100:.1f}%", (30, 195), 1, 0.8, conf_color, 1)
+            cv2.putText(frame, f"AI CONFIDENCE: {avg_conf*100:.1f}%", (30, 215), 1, 0.8, conf_color, 1)
             
-            cv2.line(frame, (25, 210), (hud_width - 25, 210), (100, 100, 100), 1)
+            cv2.line(frame, (25, 230), (hud_width - 25, 230), (100, 100, 100), 1)
 
             # REAL-TIME STATISTICS AND HEALTH
-            cv2.putText(frame, f"INFERENCE: {fps_real:.1f} FPS", (30, 240), 1, 0.8, (255, 255, 255), 1)
-            cv2.putText(frame, f"TARGETS NOW: {len(current_frame_detections)}", (230, 240), 1, 0.8, (0, 255, 0), 1)
+            cv2.putText(frame, f"INFERENCE: {fps_real:.1f} FPS", (30, 260), 1, 0.8, (255, 255, 255), 1)
+            cv2.putText(frame, f"TARGETS NOW: {len(current_frame_detections)}", (230, 260), 1, 0.8, (0, 255, 0), 1)
             
-            cv2.putText(frame, f"TOTAL SCANNED OBJS: {total_objects_detected}", (30, 270), 1, 0.8, (0, 255, 255), 1)
+            cv2.putText(frame, f"TOTAL SCANNED OBJS: {total_objects_detected}", (30, 290), 1, 0.8, (0, 255, 255), 1)
             
             # PARK HEALTH CALCULATION
             positives = category_counts.get("PUBLIC_ASSETS", 0) + category_counts.get("VEGETATION_STATE", 0) + category_counts.get("WILDLIFE_&_PEOPLE", 0)
@@ -307,10 +311,10 @@ def analyze_video(input_path, output_path, device="0"):
                 health_score = int((positives / (positives + negatives)) * 100)
             
             h_color = (0, 255, 0) if health_score >= 60 else (0, 165, 255) if health_score >= 30 else (0, 0, 255)
-            cv2.putText(frame, f"PARK HEALTH INDEX: {health_score}%", (30, 300), cv2.FONT_HERSHEY_DUPLEX, 0.7, h_color, 1)
+            cv2.putText(frame, f"PARK HEALTH INDEX: {health_score}%", (30, 320), cv2.FONT_HERSHEY_DUPLEX, 0.7, h_color, 1)
 
             # LIVE AUDIT LOG
-            cv2.putText(frame, "REAL-TIME INFRASTRUCTURE AUDIT:", (30, 340), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0, 255, 0), 1)
+            cv2.putText(frame, "REAL-TIME INFRASTRUCTURE AUDIT:", (30, 360), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0, 255, 0), 1)
             
             # Detection history update
             for d in current_frame_detections:
@@ -318,7 +322,7 @@ def analyze_video(input_path, output_path, device="0"):
                     detected_history.insert(0, (d[:30], frame_count))
             
             for i, (item, f_num) in enumerate(detected_history[:9]):
-                y_p = 365 + (i * 25)
+                y_p = 385 + (i * 25)
                 fade = max(0.1, 1.0 - (i / 9))
                 c = (0, int(255 * fade), 0)
                 cv2.putText(frame, f"[{f_num:04}] ANALYZED: {item}", (40, y_p), 1, 0.8, c, 1)
