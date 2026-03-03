@@ -1,4 +1,4 @@
-# 🌿 Video UrbanScan AI - Next Gen (2026 Vision)
+# 🎥 Video UrbanScan AI - Next Gen (2026 Vision)
 
 <div align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -17,10 +17,9 @@
 ---
 
 <div align="center">
-  <video width="100%" controls>
-    <source src="output_2026_vision_final.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <a href="https://youtu.be/fynnmxNzh_E" target="_blank">
+    <img src="https://img.youtube.com/vi/fynnmxNzh_E/maxresdefault.jpg" alt="UrbanScan AI Output Video" width="100%" />
+  </a>
   <p><i>Input video footage originally captured with a <b>DJI Neo 2</b> drone.</i></p>
 </div>
 
