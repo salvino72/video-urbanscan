@@ -99,3 +99,8 @@ You are free to use, share, and adapt the software and concept, provided you mus
 For full details, please refer to the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) standard.
 
 *Concept and architecture developed by the author. Find more projects at **[fidacaro.com](https://fidacaro.com)***.
+
+---
+
+### ⚠️ Disclaimer & Liability
+This software is provided "as is", without warranty of any kind. The author, **Salvino Fidacaro**, shall not be held liable for any claim, damages, or other liability, whether in an action of contract, tort or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software. **UrbanScan AI** is intended for educational and research purposes; the user assumes all responsibility for its application and any misuse of the generated data.

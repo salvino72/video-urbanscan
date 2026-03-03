@@ -7,6 +7,10 @@ Original Code Developer: Salvino Fidacaro (https://fidacaro.com)
 This script performs advanced video analysis to detect structural anomalies, 
 waste, vegetation, and public assets in an urban park or garden environment.
 
+[DISCLAIMER]: This software is provided for research/educational purposes. 
+The developer (Salvino Fidacaro) is NOT responsible for any misuse, 
+data privacy violations, or damages resulting from the use of this code.
+
 --- HOW TO SWITCH HARDWARE (NVIDIA / INTEL OPENVINO) ---
 The system dynamically supports different hardware architectures for inference:
 
