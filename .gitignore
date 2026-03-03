@@ -1,0 +1,14 @@
+# Ignore inputs
+input_video.mp4
+input_video.*
+*.tmp
+*.temp
+
+# IDEs
+.idea/
+.vscode/
+__pycache__/
+
+# AI Models & Exports
+*.pt
+*_openvino_model/
